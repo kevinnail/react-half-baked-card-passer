@@ -53,7 +53,6 @@ function App() {
           setFrom={setFrom}
           selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
@@ -62,7 +61,6 @@ function App() {
           setFrom={setFrom}
           selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
@@ -71,15 +69,8 @@ function App() {
           setFrom={setFrom}
           selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
         />
-        <CardList
-          cards={deck}
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
-          setFrom={setFrom}
-          player={'deck'}
-        />
+        <CardList cards={deck} selectedCard={selectedCard} setFrom={setFrom} player={'deck'} />
       </section>
       <section>
         {selectedCard && (
@@ -89,7 +80,6 @@ function App() {
             from={from}
             to={to}
             selectedCard={selectedCard}
-            setSelectedCard={setSelectedCard}
           />
         )}
       </section>
