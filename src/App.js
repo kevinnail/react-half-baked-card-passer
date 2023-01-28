@@ -10,10 +10,10 @@ function App() {
   const [deck, setDeck] = useState(initialCards);
   const [playerOneHand, setPlayerOneHand] = useState([]);
   // const [selectedCard, setSelectedCard] = useState();
-  const { selectedCard, to } = useContext(GameContext);
+  const { selectedCard, to, from, setSelectedCard } = useContext(GameContext);
   const [playerTwoHand, setPlayerTwoHand] = useState([]);
   const [playerThreeHand, setPlayerThreeHand] = useState([]);
-  const [from, setFrom] = useState('deck');
+  // const [from, setFrom] = useState('deck');
   // const [to, setTo] = useState(1);
 
   function findCardIndex(value, suit, cards) {
@@ -39,21 +39,19 @@ function App() {
     toSetFunction([...toHand]);
     fromSetFunction([...fromHand]);
 
-    // setSelectedCard(null);
+    setSelectedCard(null);
   }
 
   return (
     <div className="App">
       <section>
         {/* if the player names are numbers, that will make our life easier later because we can reuse numbers as arrays. Note that this will make our app brittle! */}
-        <Player player={1} hand={playerOneHand} setFrom={setFrom} />
-        <Player player={2} hand={playerTwoHand} setFrom={setFrom} />
-        <Player player={3} hand={playerThreeHand} setFrom={setFrom} />
-        <CardList cards={deck} setFrom={setFrom} player={'deck'} />
+        <Player player={1} hand={playerOneHand} />
+        <Player player={2} hand={playerTwoHand} />
+        <Player player={3} hand={playerThreeHand} />
+        <CardList cards={deck} player={'deck'} />
       </section>
-      <section>
-        {selectedCard && <ExecutePassButton passCard={passCard} setFrom={setFrom} from={from} />}
-      </section>
+      <section>{selectedCard && <ExecutePassButton passCard={passCard} from={from} />}</section>
     </div>
   );
 }
