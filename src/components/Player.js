@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GameContext } from '../GameContext.js';
 import CardList from './CardList';
 
-export default function Player({ player, hand, setFrom }) {
+export default function Player({ player, hand }) {
   const { to, setTo } = useContext(GameContext);
   return (
     <div
@@ -10,7 +10,7 @@ export default function Player({ player, hand, setFrom }) {
       onClick={() => setTo(player)}
     >
       <p>Player {player}</p>
-      <CardList player={player} cards={hand} setFrom={setFrom} />
+      <CardList player={player} cards={hand} />
     </div>
   );
 }
