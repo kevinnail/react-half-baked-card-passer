@@ -1,22 +1,13 @@
 import './App.css';
-// import initialCards from './cards-data';
 import Player from './components/Player';
 import CardList from './components/CardList';
-// import { useContext, useState } from 'react';
 import { useContext } from 'react';
 import ExecutePassButton from './components/ExecutePassButton';
 import { GameContext } from './GameContext.js';
 
 function App() {
-  // const [deck, setDeck] = useState(initialCards);
-  // const [selectedCard, setSelectedCard] = useState();
   const { selectedCard, playerOneHand, playerTwoHand, playerThreeHand, deck } =
     useContext(GameContext);
-  // const [playerOneHand, setPlayerOneHand] = useState([]);
-  // const [playerTwoHand, setPlayerTwoHand] = useState([]);
-  // const [playerThreeHand, setPlayerThreeHand] = useState([]);
-  // const [from, setFrom] = useState('deck');
-  // const [to, setTo] = useState(1);
 
   return (
     <div className="App">
